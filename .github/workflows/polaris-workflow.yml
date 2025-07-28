@@ -17,7 +17,7 @@ on:
   workflow_dispatch: {}
 jobs:
   polaris:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Source
         uses: actions/checkout@v4
@@ -33,5 +33,5 @@ jobs:
           include_diagnostics: true
           polaris_prComment_enabled: true
           github_token: ${{ secrets.GH_TOKEN }}
-          polaris_reports_sarif_create: true
-          polaris_upload_sarif_report: true
+          polaris_reports_sarif_create: false
+          polaris_upload_sarif_report: false
